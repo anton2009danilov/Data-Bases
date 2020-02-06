@@ -1,4 +1,4 @@
--- код воспроизведенный с видео урока
+-- *****код воспроизведенный с видео урока*****
 
 drop schema if exists vk;
 create schema vk;
@@ -156,6 +156,45 @@ create table photos(
 );
 
 
--- домашняя работа
+-- *****Домашняя работа******
+
+drop table if exists events;
+create table events (
+	id serial,
+	name varchar(200),
+	creator_id bigint unsigned not null,
+	event_date datetime not null,
+	created_at datetime default now(),
+	
+	primary key (id),
+	foreign key (creator_id) references users(id)
+	
+);
+
+drop table if exists user_events;
+create table user_events (
+	user_id bigint unsigned not null,
+	event_id bigint unsigned not null,
+	
+	primary key (user_id, event_id),
+	foreign key (user_id) references users(id),
+	foreign key (event_id) references events(id)
+);
+
+drop table if exists music;
+create table music (
+	id serial,
+	name varchar(150),
+	media_id bigint unsigned not null,
+	
+	primary key (id),
+	index (name),
+	foreign key (media_id) references media(id)
+		
+);
+
+
+
+
 
 
