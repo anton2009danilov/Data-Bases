@@ -28,6 +28,7 @@ create table profiles (
 	timezone varchar(100),
 	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National'),
 	otb_rating_value smallint unsigned,
+	-- image bigint unsigned,
 	
 	primary key (id),
 	foreign key (user_id) references users(id),
@@ -35,3 +36,30 @@ create table profiles (
 	index (email)
 	
 );
+
+
+-- архив сыгранных на сайте партий
+drop table if exists archive;
+create table archive (
+	id serial,
+	white_id bigint unsigned not null,
+	black_id bigint unsigned not null,
+	game_date datetime default now(),
+	game_text json,
+-- 	расшифровка партии в формате json:
+-- 	{
+-- 	1: e4 e5,
+-- 	2: Kf3 Kc6,
+-- 	3: Kc3 Kf6
+-- 	...
+-- 	}
+	
+	primary key (id),
+	index (white_id),
+	index (black_id),
+	foreign key (white_id) references users(id),
+	foreign key (black_id) references users(id)
+	
+	
+);
+
