@@ -67,8 +67,8 @@ create table archive (
 drop table if exists puzzles;
 create table puzzles (
 	id serial,
-	puzzle json,	-- расположение фигур на доске, очередность хода
-	answer json, 	-- решение задачи
+	puzzle json not null,	-- расположение фигур на доске, очередность хода
+	answer json not null, 	-- решение задачи
 	difficulty smallint unsigned not null, -- рейтинг задачи по сложности
 	
 	primary key (id),
@@ -76,3 +76,28 @@ create table puzzles (
 	
 );
 
+
+-- таблица соревнований
+drop table if exists tournaments;
+create table tournaments (
+	id serial,
+	creator_id bigint unsigned not null,
+	time_control smallint unsigned not null,
+	duration smallint unsigned not null,
+	start_date datetime not null,
+	
+	primary key (id),
+	foreign key (creator_id) references users(id)
+	
+);
+
+-- таблица записи на соревнования
+drop table if exists user_tournament;
+create table user_tournament (
+	user_id bigint unsigned not null,
+	tournament_id bigint unsigned not null,
+	
+	primary key (user_id, tournament_id),
+	foreign key (user_id) references users(id),
+	foreign key (tournament_id) references tournaments(id)
+);
