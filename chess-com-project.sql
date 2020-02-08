@@ -63,3 +63,16 @@ create table archive (
 	
 );
 
+-- таблица шахматных задач
+drop table if exists puzzles;
+create table puzzles (
+	id serial,
+	puzzle json,	-- расположение фигур на доске, очередность хода
+	answer json, 	-- решение задачи
+	difficulty smallint unsigned not null, -- рейтинг задачи по сложности
+	
+	primary key (id),
+	index (difficulty)
+	
+);
+
