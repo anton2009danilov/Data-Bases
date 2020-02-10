@@ -97,8 +97,47 @@ drop table if exists user_tournament;
 create table user_tournament (
 	user_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
+	name varchar(200),
 	
 	primary key (user_id, tournament_id),
+	index(name),
 	foreign key (user_id) references users(id),
+	foreign key (tournament_id) references tournaments(id)
+);
+
+-- таблица клубов
+drop table if exists clubs;
+create table clubs (
+	id serial,
+	creator_id bigint unsigned not null,
+	name varchar(200),
+	
+	primary key (id),
+	index (name),
+	foreign key (creator_id) references users(id)
+	
+);
+
+-- таблица записи в клубы
+drop table if exists user_club;
+create table user_club (
+	user_id bigint unsigned not null,
+	club_id bigint unsigned not null,
+	
+	primary key (user_id, club_id),
+	foreign key (user_id) references users(id),
+	foreign key (club_id) references clubs(id)
+);
+
+-- таблица соревнований, организованных клубом
+drop table if exists club_tournament;
+create table club_tournament(
+	club_id bigint unsigned not null,
+	tournament_id bigint unsigned not null,
+	name varchar(200),
+	
+	primary key (club_id, tournament_id),
+	index (name),
+	foreign key (club_id) references clubs(id),
 	foreign key (tournament_id) references tournaments(id)
 );
