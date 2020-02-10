@@ -81,12 +81,14 @@ create table puzzles (
 drop table if exists tournaments;
 create table tournaments (
 	id serial,
+	name varchar(150) not null,
 	creator_id bigint unsigned not null,
 	time_control smallint unsigned not null,
 	duration smallint unsigned not null,
 	start_date datetime not null,
 	
 	primary key (id),
+	index (name),
 	index (start_date),
 	foreign key (creator_id) references users(id)
 	
@@ -97,10 +99,8 @@ drop table if exists user_tournament;
 create table user_tournament (
 	user_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
-	name varchar(200),
-	
+		
 	primary key (user_id, tournament_id),
-	index(name),
 	foreign key (user_id) references users(id),
 	foreign key (tournament_id) references tournaments(id)
 );
@@ -110,7 +110,7 @@ drop table if exists clubs;
 create table clubs (
 	id serial,
 	creator_id bigint unsigned not null,
-	name varchar(200),
+	name varchar(200) not null,
 	
 	primary key (id),
 	index (name),
@@ -134,10 +134,33 @@ drop table if exists club_tournament;
 create table club_tournament(
 	club_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
-	name varchar(200),
+	name varchar(200) not null,
 	
 	primary key (club_id, tournament_id),
 	index (name),
 	foreign key (club_id) references clubs(id),
 	foreign key (tournament_id) references tournaments(id)
+);
+
+-- таблица новостей
+drop table if exists news;
+create table news (
+	id serial,
+	creator_id bigint unsigned not null,
+	header varchar (150) not null,
+	article text not null,
+	image varchar(150), 
+	
+	primary key (id),
+	index (header),
+	foreign key (creator_id) references users(id)
+);
+
+-- таблица привязки новости к клубу
+drop table if exists news_club;
+create table news_club(
+	news_id bigint unsigned not null,
+	club_id bigint unsigned not null,
+	
+	primary key (news_id, club_id)
 );
