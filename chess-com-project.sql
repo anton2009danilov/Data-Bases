@@ -150,7 +150,7 @@ create table news (
 	header varchar (150) not null,
 	article text not null,
 	image varchar(150),
-	created_at datetime not null default now()
+	created_at datetime not null default now(),
 	
 	primary key (id),
 	index (header),
