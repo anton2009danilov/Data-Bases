@@ -87,6 +87,7 @@ create table tournaments (
 	start_date datetime not null,
 	
 	primary key (id),
+	index (start_date),
 	foreign key (creator_id) references users(id)
 	
 );
