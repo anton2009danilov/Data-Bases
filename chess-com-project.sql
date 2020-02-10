@@ -149,7 +149,8 @@ create table news (
 	creator_id bigint unsigned not null,
 	header varchar (150) not null,
 	article text not null,
-	image varchar(150), 
+	image varchar(150),
+	created_at datetime not null default now()
 	
 	primary key (id),
 	index (header),
