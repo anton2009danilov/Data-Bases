@@ -9,8 +9,10 @@ create table users (
 	id serial,
 	login varchar(50),
 	password_hash varchar(50),
+	email varchar(150),
 	
-	primary key(id)
+	primary key(id),
+	index (email)
 );
 
 drop table if exists profiles;
@@ -19,7 +21,7 @@ create table profiles (
 	user_id bigint unsigned not null,
 	firstname varchar(150),
 	lastname varchar(150),
-	email varchar(150),
+	
 	location varchar(150),
 	country varchar(150),
 	`language` varchar(150),
@@ -32,8 +34,8 @@ create table profiles (
 	
 	primary key (id),
 	foreign key (user_id) references users(id),
-	index (firstname, lastname),
-	index (email)
+	index (firstname, lastname)
+	
 	
 );
 
