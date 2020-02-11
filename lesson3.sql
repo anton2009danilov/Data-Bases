@@ -11,10 +11,12 @@ create table users (
 	firstname VARCHAR(100),
 	lastname VARCHAR(100),
 	password_hash VARCHAR(255),
-	phone VARCHAR(100),
+	email varchar(100) not null unique,
+	phone bigint unsigned,
 	
 	primary key (id),
 	index users_phone_idx (phone),
+	index users_email_idx (email),
 	index (firstname, lastname)
 );
 
