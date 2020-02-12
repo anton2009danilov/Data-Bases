@@ -4,16 +4,16 @@
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('1', 'Dell', 'Schmeler', '8e25bc0ca145ffee7164a53208824fb83c5bcd9a', 'berenice.ferry@example.net', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('2', 'Adella', 'Kuhic', 'ca55d36dbbdf1a189e0df0a08c2741b1727882c0', 'don77@example.net', '3359197769');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('3', 'Jerome', 'Kunde', '5c6372876f816f16c59524ea4e8f45b70e12ef8b', 'mittie28@example.net', '600897');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('3', 'Adella', 'Kunde', '5c6372876f816f16c59524ea4e8f45b70e12ef8b', 'mittie28@example.net', '600897');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('4', 'Dawn', 'Prohaska', 'a942932c557e086758d447411f6de1dd7e1ce5c1', 'skylar.west@example.com', '573661');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('5', 'Arno', 'Moore', '4e07f2e25e3b9fbf9f0532277aab2901e4c91b8c', 'aadams@example.net', '305');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('6', 'Mae', 'Kling', '4757332b9ee763b8334c2c0d7d5e95997f7f49c1', 'ktromp@example.com', '0');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('7', 'Carole', 'Jerde', '160fe31ad412018214a57cdd9a37b25c8595ba63', 'brock.pollich@example.net', '389204');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('7', 'Mae', 'Jerde', '160fe31ad412018214a57cdd9a37b25c8595ba63', 'brock.pollich@example.net', '389204');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('8', 'Ruben', 'Bergnaum', '9fafbcfea2b26bea62d0743000e290b4320bb9cd', 'oyost@example.net', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('9', 'Michel', 'Schultz', '11d44d67e25b783ea11b5a99aee7310ac22a9a42', 'schulist.elyse@example.org', '44');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('10', 'Lexie', 'Marquardt', 'ae787aeb03e9f77efe8e3a86546091783b250f53', 'rosenbaum.rosemary@example.org', '980813');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('11', 'Holden', 'Donnelly', '7c0f2e54756211ee4b2107eee0cbbf0b5e55938f', 'dooley.taylor@example.net', '278');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('12', 'Hudson', 'Fritsch', '58da81a0958f69ab0816caf82fc16637f7cf5971', 'vmonahan@example.com', '341');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('12', 'Holden', 'Fritsch', '58da81a0958f69ab0816caf82fc16637f7cf5971', 'vmonahan@example.com', '341');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('13', 'Kadin', 'Davis', '6b4a1e13f578200c9ca69f654ba49b328367c1ff', 'djohnson@example.org', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('14', 'Alexandria', 'Leffler', '5162fdc49584d766d5c96d56e3f3f10f30fafbfc', 'sjones@example.org', '568');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password_hash`, `email`, `phone`) VALUES ('15', 'Lemuel', 'Leannon', '7fb2b63bc2ea41a1e26756d2eed449e1d3e5999d', 'chris.vonrueden@example.net', '0');

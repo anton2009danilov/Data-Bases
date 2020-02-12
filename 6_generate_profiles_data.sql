@@ -1,6 +1,5 @@
-
-
-INSERT INTO `profiles` VALUES ('1','male','1979-02-26','1','Amyachester','2003-02-10 04:50:14'),
+INSERT INTO `profiles` (user_id, gender, birthday, photo_id, hometown, created_at)
+VALUES ('1','male','1979-02-26','1','Amyachester','2003-02-10 04:50:14'),
 ('2','female','1977-02-05','2','North Camillamouth','1993-09-29 19:19:10'),
 ('3','female','2014-11-30','3','Port Annamae','2001-07-06 09:43:36'),
 ('4','male','2019-05-17','4','Port Alvena','1984-08-10 04:42:35'),
