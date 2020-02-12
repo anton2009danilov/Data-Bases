@@ -62,7 +62,7 @@ create table friend_requests (
 	
 	initiator_user_id bigint unsigned not null,
 	target_user_id bigint unsigned not null,	
-	`status` enum ('accepted', 'denied', 'requested', 'unfriended'),
+	`status` enum ('accepted', 'denied', 'requested', 'unfriended') default 'requested',
 	created_at datetime default now(),
 	updated_at datetime on update current_timestamp,
 	
