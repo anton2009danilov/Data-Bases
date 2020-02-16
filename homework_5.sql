@@ -37,22 +37,30 @@
 	--    Необходимо отсортировать записи таким образом, чтобы они выводились в порядке увеличения значения value. Однако,
 	--    нулевые запасы должны выводиться в конце, после всех записей.
 	
-	drop table if exists storehouses_products;
-	create table storehouses_products(
-		id serial primary key,
-		name varchar(150),
-		value int
-	);
-	
-	insert into storehouses_products (`name`,`value`) values
-		('заяц',0), ('мишка',4), ('котик',0), ('собачка',23), ('мышка',1), ('лягушка',2), ('динозавр', 0);
-	
-	select `name`, `value` from storehouses_products order by 1/value desc;
+		drop table if exists storehouses_products;
+		create table storehouses_products(
+			id serial primary key,
+			name varchar(150),
+			value int
+		);
+		
+		insert into storehouses_products (`name`,`value`) values
+			('заяц',0), ('мишка',4), ('котик',0), ('собачка',23), ('мышка',1), ('лягушка',2), ('динозавр', 0);
+		
+		select `name`, `value` from storehouses_products order by 1/value desc;
 
 
 	-- 4. (по желанию) Из таблицы users необходимо извлечь пользователей, родившихся в августе и мае. Месяцы заданы в виде
 	--    списка английских названий ('may', 'august')
 	
-	select user_id from profiles p2 where monthname(birthday) in ('may', 'august');
+		select user_id from profiles p2 where monthname(birthday) in ('may', 'august');
 	
-	
+
+	-- 5. (по желанию) Из таблицы catalogs извлекаются записи при помощи запроса
+	-- 	  SELECT * FROM catalogs WHERE id IN (5, 1, 2); Отсортируйте записи в порядке, заданном в списке IN.
+
+		select 5%2.5; -- 0
+		select 1%2.5; -- 1
+		select 2%2.5; -- 2
+		
+		SELECT * FROM users WHERE id IN (5, 1, 2) order by id%2.5;
