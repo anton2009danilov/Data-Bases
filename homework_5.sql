@@ -15,20 +15,21 @@
 		created_at = str_to_date(replace(created_at, '.', ','), '%d, %m, %Y, %T'),
 		updated_at = str_to_date(replace(updated_at, '.', ','), '%d, %m, %Y, %T');
 	
-	-- Метод протестирован на таблице test, всё работает.
-	-- create table test (
-	-- 	id serial,
-	-- 	date varchar(100),
-	-- 	
-	-- 	primary key (id)
-	-- );
+		-- Метод протестирован на таблице test, всё работает.
+		-- create table test (
+		-- 	id serial,
+		-- 	date varchar(100),
+		-- 	
+		-- 	primary key (id)
+		-- );
+		
+		-- truncate table test;
+		-- insert into test (date) values ('20.10.2017 8:10');
+		
+		-- select * from test;
+		-- update test set date = replace(date, '.', ',') where id = 1;
+		-- update test set date = str_to_date(replace(date, '.', ','), '%d, %m, %Y %T') where id = 1;
 	
-	-- truncate table test;
-	-- insert into test (date) values ('20.10.2017 8:10');
-	
-	-- select * from test;
-	-- update test set date = replace(date, '.', ',') where id = 1;
-	-- update test set date = str_to_date(replace(date, '.', ','), '%d, %m, %Y %T') where id = 1;
 	
 	
 	-- 3. В таблице складских запасов storehouses_products в поле value могут встречаться самые разные цифры:
@@ -36,6 +37,7 @@
 	--    Необходимо отсортировать записи таким образом, чтобы они выводились в порядке увеличения значения value. Однако,
 	--    нулевые запасы должны выводиться в конце, после всех записей.
 	
+	drop table if exists storehouses_products;
 	create table storehouses_products(
 		id serial primary key,
 		name varchar(150),
@@ -47,4 +49,10 @@
 	
 	select `name`, `value` from storehouses_products order by 1/value desc;
 
-		
+
+	-- 4. (по желанию) Из таблицы users необходимо извлечь пользователей, родившихся в августе и мае. Месяцы заданы в виде
+	--    списка английских названий ('may', 'august')
+	
+	select user_id from profiles p2 where monthname(birthday) in ('may', 'august');
+	
+	
