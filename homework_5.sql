@@ -73,3 +73,13 @@
 
 	
 	
+	-- 2. Подсчитайте количество дней рождения, которые приходятся на каждый из дней недели. 
+	--    Следует учесть, что необходимы дни недели текущего года, а не года рождения.
+
+		select 
+			DAYNAME (concat(year(now()) , substring(birthday, 5))) as day_of_week,
+			count(*)
+			from profiles
+			group by day_of_week
+			order by dayofweek (concat(year(now()) , substring(birthday, 5)));
+	
