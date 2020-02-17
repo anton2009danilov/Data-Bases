@@ -64,3 +64,12 @@
 		select 2%2.5; -- 2
 		
 		SELECT * FROM users WHERE id IN (5, 1, 2) order by id%2.5;
+		
+	
+	
+	--  “Агрегация данных”
+	-- 1. Подсчитайте средний возраст пользователей в таблице users
+		select round ( avg ( (to_days (current_date() ) - to_days (birthday) ) / 365.25), 2) from profiles;
+
+	
+	
