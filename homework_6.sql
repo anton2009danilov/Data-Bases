@@ -25,12 +25,16 @@ limit 1);
 
 -- 2. Подсчитать общее количество лайков, которые получили пользователи младше 10 лет.
 
-select count(*) as total_likes_for_kids from likes where user_id in (
+select count(*) as total_likes_for_kids from likes where media_id in (
+	
+	select id as media_id from media where user_id in (
+	
+		select user_id from profiles where (
+			to_days(current_date()) / 365.25 -
+			to_days(birthday) / 365.25)
+			< 10
+	)
+);
 
-	select user_id from profiles where (
-		to_days(current_date()) / 365.25 -
-		to_days(birthday) / 365.25)
-		< 10
-	); 
 
 
