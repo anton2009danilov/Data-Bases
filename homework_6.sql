@@ -37,4 +37,28 @@ select count(*) as total_likes_for_kids from likes where media_id in (
 );
 
 
+-- 3. Определить кто больше поставил лайков (всего) - мужчины или женщины?
 
+select
+	case
+		when 
+			count(*)/2 > (
+				select count(*) from likes where user_id in (
+					select user_id from profiles where gender = 'male'
+				)
+			)
+		then "Больше всего лайков поставили женщины"
+		
+		when 
+			count(*)/2 > (
+				select count(*) from likes where user_id in (
+					select user_id from profiles where gender = 'female'
+				)
+			)
+		then "Больше всего лайков поставили мужчины"
+		else "Мужчины и женщины поставили одинаковое количество лайков"
+		end as 'Результат подсчёта'
+	from likes;
+
+
+	
