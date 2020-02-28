@@ -47,14 +47,8 @@ create table archive (
 	white_id bigint unsigned not null,
 	black_id bigint unsigned not null,
 	game_date datetime default now(),
-	game_text json,
--- 	расшифровка партии в формате json:
--- 	{
--- 	1: e4 e5,
--- 	2: Kf3 Kc6,
--- 	3: Kc3 Kf6
--- 	...
--- 	}
+	game_text text,
+	game_result enum('1-0', '0-1', '1/2-1/2', 'aborted'),
 	
 	primary key (id),
 	index (white_id),
