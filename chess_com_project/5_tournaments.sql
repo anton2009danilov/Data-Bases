@@ -1,24 +1,3 @@
-#
-# TABLE STRUCTURE FOR: tournaments
-#
-
-DROP TABLE IF EXISTS `tournaments`;
-
-CREATE TABLE `tournaments` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `creator_id` bigint(20) unsigned NOT NULL,
-  `time_control` smallint(5) unsigned NOT NULL,
-  `duration` smallint(5) unsigned NOT NULL,
-  `start_date` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `name` (`name`),
-  KEY `start_date` (`start_date`),
-  KEY `creator_id` (`creator_id`),
-  CONSTRAINT `tournaments_ibfk_1` FOREIGN KEY (`creator_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 INSERT INTO `tournaments` (`id`, `name`, `creator_id`, `time_control`, `duration`, `start_date`) VALUES ('1', 'Dolorum officiis est adipisci.', '1', 55, 7, '2016-04-03 16:08:19');
 INSERT INTO `tournaments` (`id`, `name`, `creator_id`, `time_control`, `duration`, `start_date`) VALUES ('2', 'Voluptate molestias ut et cupiditate in aut.', '2', 10, 5, '2008-11-11 18:10:28');
 INSERT INTO `tournaments` (`id`, `name`, `creator_id`, `time_control`, `duration`, `start_date`) VALUES ('3', 'Quia dolor illum neque quasi eligendi ipsam sequi.', '3', 25, 3, '2013-03-12 05:23:39');

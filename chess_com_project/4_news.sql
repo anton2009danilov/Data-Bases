@@ -1,23 +1,3 @@
-#
-# TABLE STRUCTURE FOR: news
-#
-
-DROP TABLE IF EXISTS `news`;
-
-CREATE TABLE `news` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `creator_id` bigint(20) unsigned NOT NULL,
-  `header` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `article` text COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `header` (`header`),
-  KEY `creator_id` (`creator_id`),
-  CONSTRAINT `news_ibfk_1` FOREIGN KEY (`creator_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 INSERT INTO `news` (`id`, `creator_id`, `header`, `article`, `image`, `created_at`) VALUES ('1', '1', 'Nisi at dolorum esse voluptate sint numquam qui.', 'I only wish people knew that: then they both bowed low, and their curls got entangled together. Alice laughed so much surprised, that for the Dormouse,\' thought Alice; \'I can\'t help it,\' said the.', 'http://lorempixel.com/640/480/', '1988-02-24 22:45:09');
 INSERT INTO `news` (`id`, `creator_id`, `header`, `article`, `image`, `created_at`) VALUES ('2', '2', 'Et numquam delectus explicabo praesentium id ullam sed.', 'Queen, the royal children; there were TWO little shrieks, and more puzzled, but she thought it would be wasting our breath.\" \"I\'ll be judge, I\'ll be jury,\" Said cunning old Fury: \"I\'ll try the first.', 'http://lorempixel.com/640/480/', '1992-11-20 08:20:16');
 INSERT INTO `news` (`id`, `creator_id`, `header`, `article`, `image`, `created_at`) VALUES ('3', '3', 'Fugit ad cumque aut modi aperiam.', 'King, and the Queen was to get out again. The rabbit-hole went straight on like a mouse, That he met in the sand with wooden spades, then a row of lamps hanging from the change: and Alice guessed in.', 'http://lorempixel.com/640/480/', '2003-09-01 02:47:31');

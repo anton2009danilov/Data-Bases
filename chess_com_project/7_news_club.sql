@@ -1,15 +1,3 @@
-#
-# TABLE STRUCTURE FOR: news_club
-#
-
-DROP TABLE IF EXISTS `news_club`;
-
-CREATE TABLE `news_club` (
-  `news_id` bigint(20) unsigned NOT NULL,
-  `club_id` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY (`news_id`,`club_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 INSERT INTO `news_club` (`news_id`, `club_id`) VALUES ('1', '1');
 INSERT INTO `news_club` (`news_id`, `club_id`) VALUES ('2', '2');
 INSERT INTO `news_club` (`news_id`, `club_id`) VALUES ('3', '3');

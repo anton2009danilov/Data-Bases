@@ -1,18 +1,3 @@
-#
-# TABLE STRUCTURE FOR: user_tournament
-#
-
-DROP TABLE IF EXISTS `user_tournament`;
-
-CREATE TABLE `user_tournament` (
-  `user_id` bigint(20) unsigned NOT NULL,
-  `tournament_id` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY (`user_id`,`tournament_id`),
-  KEY `tournament_id` (`tournament_id`),
-  CONSTRAINT `user_tournament_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `user_tournament_ibfk_2` FOREIGN KEY (`tournament_id`) REFERENCES `tournaments` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 INSERT INTO `user_tournament` (`user_id`, `tournament_id`) VALUES ('1', '1');
 INSERT INTO `user_tournament` (`user_id`, `tournament_id`) VALUES ('1', '6');
 INSERT INTO `user_tournament` (`user_id`, `tournament_id`) VALUES ('1', '11');
