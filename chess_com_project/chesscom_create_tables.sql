@@ -26,9 +26,9 @@ create table profiles (
 	country varchar(150),
 	`language` varchar(150),
 	content_language varchar(150),
-	landing_page enum('Home', 'Chess Today', 'Live'),
+	landing_page enum('Home', 'Chess Today', 'Live') default('Home'),
 	timezone varchar(100),
-	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National'),
+	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National', ''),
 	otb_rating_value smallint unsigned,
 	-- image bigint unsigned,
 	

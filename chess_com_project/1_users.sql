@@ -1,18 +1,3 @@
-#
-# TABLE STRUCTURE FOR: users
-#
-
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `login` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `password_hash` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `users` (`id`, `login`, `password_hash`, `email`) VALUES ('1', 'jenkins.dalton', '0236e33d1a4362f2e985f1835cde6bfc2b5f26c2', 'hhegmann@example.net');
 INSERT INTO `users` (`id`, `login`, `password_hash`, `email`) VALUES ('2', 'mckenzie.donato', 'd6902df62429a135b0c4fe62e9da498e4c3b3e44', 'lturner@example.org');
