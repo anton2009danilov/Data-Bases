@@ -136,10 +136,8 @@ drop table if exists club_tournament;
 create table club_tournament(
 	club_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
-	name varchar(200) not null,
 	
 	primary key (club_id, tournament_id),
-	index (name),
 	foreign key (club_id) references clubs(id),
 	foreign key (tournament_id) references tournaments(id)
 );
