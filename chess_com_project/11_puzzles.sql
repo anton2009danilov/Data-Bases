@@ -1,29 +1,13 @@
-#
-# TABLE STRUCTURE FOR: puzzles
-#
-
-DROP TABLE IF EXISTS `puzzles`;
-
-CREATE TABLE `puzzles` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `puzzle` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `answer` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `difficulty` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `difficulty` (`difficulty`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('1', '', 'Repellat esse cupiditate non voluptates.', 1072);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('2', '', 'Ad dolores praesentium placeat nulla quia aut.', 784);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('3', '', 'Sunt incidunt corporis laborum sunt.', 1151);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('4', '', 'Voluptatem alias nisi quis optio non magni.', 1146);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('5', '', 'Asperiores ad qui omnis consequuntur omnis quidem enim.', 1336);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('6', '', 'Consequatur alias quis vel ducimus neque ullam.', 1336);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('7', '', 'Et voluptatum iste ut sapiente voluptatem natus consequatur.', 1972);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('8', '', 'Eveniet iusto ducimus commodi.', 1620);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('9', '', 'Laborum expedita distinctio qui aut beatae mollitia et quis.', 1027);
-INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('10', '', 'Necessitatibus et nisi debitis aspernatur odio velit modi.', 1394);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('1', 'w-K-b6, w-R-b7, b-K-a8, b-N-a6', '1.Rd7 Nb4 2.Rd8', 1072);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('2', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 784);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('3', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1151);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('4', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1146);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('5', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1336);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('6', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1336);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('7', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1972);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('8', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1620);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('9', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1027);
+INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('10', 'w-K-f6, w-Q-f1, b-K-h8, b-B-h7, b-p-g6', '1.Qa8 g5 2.Kf7', 1394);
 INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('11', '', 'Quis reiciendis ab velit cum adipisci.', 1552);
 INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('12', '', 'Pariatur dolorem porro aut quo aut reiciendis et.', 1216);
 INSERT INTO `puzzles` (`id`, `puzzle`, `answer`, `difficulty`) VALUES ('13', '', 'Recusandae ut aspernatur ea ut ratione quo.', 1574);
