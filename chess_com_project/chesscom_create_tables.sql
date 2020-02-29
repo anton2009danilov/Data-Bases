@@ -63,13 +63,25 @@ create table archive (
 drop table if exists puzzles;
 create table puzzles (
 	id serial,
-	puzzle json not null,	-- расположение фигур на доске, очередность хода
-	answer json not null, 	-- решение задачи
+	puzzle varchar(300) not null,	-- расположение фигур на доске, очередность хода
+	answer varchar(300) not null, 	-- решение задачи
 	difficulty smallint unsigned not null, -- рейтинг задачи по сложности
 	
 	primary key (id),
 	index (difficulty)
 	
+);
+
+-- таблица для отметки решенных пользователем задач
+drop table if exists solved_puzzles;
+create table solved_puzzles (
+	user_id bigint unsigned not null,
+	puzzle_id bigint unsigned not null,
+	
+	primary key (user_id, puzzle_id),
+	foreign key (user_id) references users(id),
+	foreign key (puzzle_id) references puzzles(id)
+
 );
 
 
