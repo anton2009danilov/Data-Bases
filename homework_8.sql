@@ -73,6 +73,4 @@ create function hello()
 end
 
 
-select hello();
-
-			
+select hello();			
