@@ -73,4 +73,58 @@ create function hello()
 end
 
 
-select hello();			
+select hello();
+
+
+##  2  ##
+-- В таблице products есть два текстовых поля: name с названием товара и description с его описанием.
+-- Допустимо присутствие обоих полей или одно из них.
+-- Ситуация, когда оба поля принимают неопределенное значение NULL неприемлема.
+-- Используя триггеры, добейтесь того, чтобы одно из этих полей или оба поля были заполнены.
+-- При попытке присвоить полям NULL-значение необходимо отменить операцию.
+
+drop trigger if exists tr1;
+drop trigger if exists tr2;
+
+create trigger tr1
+	before insert
+	on products
+	for each row 
+	begin 
+ 		set new.name = coalesce (new.name, 'без имени');
+		if new.name = ''
+		then set new.name = 'без имени';
+		end if;
+		
+		set new.description = coalesce (new.description, 'без описания');
+		if new.description = ''
+		then set new.name = 'без описания';
+		end if;
+	end
+	
+create trigger tr2
+	before update
+	on products
+	for each row 
+	begin 
+		set new.name = coalesce (new.name, 'без имени');
+		if new.name = ''
+		then set new.name = 'без имени';
+		end if;
+		
+		set new.description = coalesce (new.description, 'без описания');
+		if new.description = ''
+		then set new.description = 'без описания';
+		end if;
+	end
+	
+	
+INSERT INTO products
+(name, description, price, catalog_id, created_at, updated_at)
+VALUES(null, '', 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+select * from products;
+
+update products
+SET name='', description='', price=0, catalog_id=0, created_at=CURRENT_TIMESTAMP, updated_at=CURRENT_TIMESTAMP
+where id > 8;
