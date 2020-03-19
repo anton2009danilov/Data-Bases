@@ -33,7 +33,7 @@ create table profiles (
 	-- image bigint unsigned,
 	
 	primary key (id),
-	foreign key (user_id) references users(id),
+	foreign key profiles_user_id_fkey (user_id) references users(id),
 	index (firstname, lastname)
 	
 	
@@ -53,8 +53,8 @@ create table archive (
 	primary key (id),
 	index (white_id),
 	index (black_id),
-	foreign key (white_id) references users(id),
-	foreign key (black_id) references users(id)
+	foreign key archive_white_id_fkey (white_id) references users(id),
+	foreign key archive_black_id_fkey (black_id) references users(id)
 	
 	
 );
@@ -79,8 +79,8 @@ create table solved_puzzles (
 	puzzle_id bigint unsigned not null,
 	
 	primary key (user_id, puzzle_id),
-	foreign key (user_id) references users(id),
-	foreign key (puzzle_id) references puzzles(id)
+	foreign key solved_puzzles_user_id_fkey (user_id) references users(id),
+	foreign key solved_puzzles_puzzle_id_fkey (puzzle_id) references puzzles(id)
 
 );
 
@@ -98,7 +98,7 @@ create table tournaments (
 	primary key (id),
 	index (name),
 	index (start_date),
-	foreign key (creator_id) references users(id)
+	foreign key tournaments_creator_id_fkey (creator_id) references users(id)
 	
 );
 
@@ -109,8 +109,8 @@ create table user_tournament (
 	tournament_id bigint unsigned not null,
 		
 	primary key (user_id, tournament_id),
-	foreign key (user_id) references users(id),
-	foreign key (tournament_id) references tournaments(id)
+	foreign key user_tournament_user_id_fkey (user_id) references users(id),
+	foreign key user_tournament_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица клубов
@@ -122,7 +122,7 @@ create table clubs (
 	
 	primary key (id),
 	index (name),
-	foreign key (creator_id) references users(id)
+	foreign key clubs_creator_id_fkey (creator_id) references users(id)
 	
 );
 
@@ -133,8 +133,8 @@ create table user_club (
 	club_id bigint unsigned not null,
 	
 	primary key (user_id, club_id),
-	foreign key (user_id) references users(id),
-	foreign key (club_id) references clubs(id)
+	foreign key user_club_user_id_fkey (user_id) references users(id),
+	foreign key user_club_club_id_fkey (club_id) references clubs(id)
 );
 
 -- таблица соревнований, организованных клубом
@@ -144,8 +144,8 @@ create table club_tournament(
 	tournament_id bigint unsigned not null,
 	
 	primary key (club_id, tournament_id),
-	foreign key (club_id) references clubs(id),
-	foreign key (tournament_id) references tournaments(id)
+	foreign key club_tournament_club_tournament_fkey (club_id) references clubs(id),
+	foreign key club_tournament_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица новостей
@@ -160,7 +160,7 @@ create table news (
 	
 	primary key (id),
 	index (header),
-	foreign key (creator_id) references users(id)
+	foreign key news_creator_id_fkey (creator_id) references users(id)
 );
 
 -- таблица привязки новости к клубу
