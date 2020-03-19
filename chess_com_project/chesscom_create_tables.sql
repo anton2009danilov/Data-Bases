@@ -169,5 +169,8 @@ create table news_club(
 	news_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
-	primary key (news_id, club_id)
+	primary key (news_id, club_id),
+	foreign key news_club_news_id_fkey (news_id) references news(id),
+	foreign key news_club_club_id_fkey (club_id) references clubs(id)
+	
 );
