@@ -78,10 +78,8 @@ create table solved_puzzles (
 	user_id bigint unsigned not null,
 	puzzle_id bigint unsigned not null,
 	
-	primary key (user_id, puzzle_id),
-	foreign key solved_puzzles_user_id_fkey (user_id) references users(id),
-	foreign key solved_puzzles_puzzle_id_fkey (puzzle_id) references puzzles(id)
-
+	primary key (user_id, puzzle_id)
+	
 );
 
 
