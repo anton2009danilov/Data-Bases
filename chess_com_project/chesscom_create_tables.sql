@@ -41,8 +41,8 @@ create table profiles (
 
 
 -- архив сыгранных на сайте партий
-drop table if exists archive;
-create table archive (
+drop table if exists archives;
+create table archives (
 	id serial,
 	white_id bigint unsigned not null,
 	black_id bigint unsigned not null,
@@ -53,8 +53,8 @@ create table archive (
 	primary key (id),
 	index (white_id),
 	index (black_id),
-	foreign key archive_white_id_fkey (white_id) references users(id),
-	foreign key archive_black_id_fkey (black_id) references users(id)
+	foreign key archives_white_id_fkey (white_id) references users(id),
+	foreign key archives_black_id_fkey (black_id) references users(id)
 	
 	
 );
@@ -101,14 +101,14 @@ create table tournaments (
 );
 
 -- таблица записи на соревнования
-drop table if exists user_tournament;
-create table user_tournament (
+drop table if exists user_tournaments;
+create table user_tournaments (
 	user_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
 		
 	primary key (user_id, tournament_id),
-	foreign key user_tournament_user_id_fkey (user_id) references users(id),
-	foreign key user_tournament_tournament_id_fkey (tournament_id) references tournaments(id)
+	foreign key user_tournaments_user_id_fkey (user_id) references users(id),
+	foreign key user_tournaments_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица клубов
@@ -125,14 +125,14 @@ create table clubs (
 );
 
 -- таблица записи в клубы
-drop table if exists user_club;
-create table user_club (
+drop table if exists user_clubs;
+create table user_clubs (
 	user_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
 	primary key (user_id, club_id),
-	foreign key user_club_user_id_fkey (user_id) references users(id),
-	foreign key user_club_club_id_fkey (club_id) references clubs(id)
+	foreign key user_clubs_user_id_fkey (user_id) references users(id),
+	foreign key user_clubs_club_id_fkey (club_id) references clubs(id)
 );
 
 -- таблица соревнований, организованных клубом
