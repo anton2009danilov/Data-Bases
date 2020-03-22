@@ -1,4 +1,4 @@
-INSERT INTO `user_club` (`user_id`, `club_id`) values
+INSERT INTO `user_clubs` (`user_id`, `club_id`) values
 ('1', '1'),
 ('1', '2'),
 ('1', '3'),

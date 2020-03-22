@@ -1,4 +1,4 @@
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) values
+INSERT INTO `archives` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) values
 ('1', '1', '2', '1981-01-18 15:10:43',
 '
 1. e4 {[%clk 0:15:09.9]} 1... e5 {[%clk 0:15:08.9]} 2. Nf3 {[%clk 0:15:16.7]}

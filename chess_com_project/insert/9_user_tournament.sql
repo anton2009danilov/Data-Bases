@@ -1,4 +1,4 @@
-INSERT INTO `user_tournament` (`user_id`, `tournament_id`) values
+INSERT INTO `user_tournaments` (`user_id`, `tournament_id`) values
 ('1', '1'),
 ('1', '6'),
 ('1', '11'),

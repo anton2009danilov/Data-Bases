@@ -162,13 +162,13 @@ create table news (
 );
 
 -- таблица привязки новости к клубу
-drop table if exists news_club;
-create table news_club(
+drop table if exists news_clubs;
+create table news_clubs(
 	news_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
 	primary key (news_id, club_id),
-	foreign key news_club_news_id_fkey (news_id) references news(id),
-	foreign key news_club_club_id_fkey (club_id) references clubs(id)
+	foreign key news_clubs_news_id_fkey (news_id) references news(id),
+	foreign key news_clubs_club_id_fkey (club_id) references clubs(id)
 	
 );
