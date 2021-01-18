@@ -33,7 +33,7 @@ create table profiles (
 	-- image bigint unsigned,
 	
 	primary key (id),
-	foreign key (user_id) references users(id),
+	foreign key profiles_user_id_fkey (user_id) references users(id),
 	index (firstname, lastname)
 	
 	
@@ -41,8 +41,8 @@ create table profiles (
 
 
 -- архив сыгранных на сайте партий
-drop table if exists archive;
-create table archive (
+drop table if exists archives;
+create table archives (
 	id serial,
 	white_id bigint unsigned not null,
 	black_id bigint unsigned not null,
@@ -53,8 +53,8 @@ create table archive (
 	primary key (id),
 	index (white_id),
 	index (black_id),
-	foreign key (white_id) references users(id),
-	foreign key (black_id) references users(id)
+	foreign key archives_white_id_fkey (white_id) references users(id),
+	foreign key archives_black_id_fkey (black_id) references users(id)
 	
 	
 );
@@ -78,10 +78,8 @@ create table solved_puzzles (
 	user_id bigint unsigned not null,
 	puzzle_id bigint unsigned not null,
 	
-	primary key (user_id, puzzle_id),
-	foreign key (user_id) references users(id),
-	foreign key (puzzle_id) references puzzles(id)
-
+	primary key (user_id, puzzle_id)
+	
 );
 
 
@@ -98,19 +96,19 @@ create table tournaments (
 	primary key (id),
 	index (name),
 	index (start_date),
-	foreign key (creator_id) references users(id)
+	foreign key tournaments_creator_id_fkey (creator_id) references users(id)
 	
 );
 
 -- таблица записи на соревнования
-drop table if exists user_tournament;
-create table user_tournament (
+drop table if exists user_tournaments;
+create table user_tournaments (
 	user_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
 		
 	primary key (user_id, tournament_id),
-	foreign key (user_id) references users(id),
-	foreign key (tournament_id) references tournaments(id)
+	foreign key user_tournaments_user_id_fkey (user_id) references users(id),
+	foreign key user_tournaments_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица клубов
@@ -122,19 +120,19 @@ create table clubs (
 	
 	primary key (id),
 	index (name),
-	foreign key (creator_id) references users(id)
+	foreign key clubs_creator_id_fkey (creator_id) references users(id)
 	
 );
 
 -- таблица записи в клубы
-drop table if exists user_club;
-create table user_club (
+drop table if exists user_clubs;
+create table user_clubs (
 	user_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
 	primary key (user_id, club_id),
-	foreign key (user_id) references users(id),
-	foreign key (club_id) references clubs(id)
+	foreign key user_clubs_user_id_fkey (user_id) references users(id),
+	foreign key user_clubs_club_id_fkey (club_id) references clubs(id)
 );
 
 -- таблица соревнований, организованных клубом
@@ -144,8 +142,8 @@ create table club_tournament(
 	tournament_id bigint unsigned not null,
 	
 	primary key (club_id, tournament_id),
-	foreign key (club_id) references clubs(id),
-	foreign key (tournament_id) references tournaments(id)
+	foreign key club_tournament_club_tournament_fkey (club_id) references clubs(id),
+	foreign key club_tournament_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица новостей
@@ -160,14 +158,17 @@ create table news (
 	
 	primary key (id),
 	index (header),
-	foreign key (creator_id) references users(id)
+	foreign key news_creator_id_fkey (creator_id) references users(id)
 );
 
 -- таблица привязки новости к клубу
-drop table if exists news_club;
-create table news_club(
+drop table if exists news_clubs;
+create table news_clubs(
 	news_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
-	primary key (news_id, club_id)
+	primary key (news_id, club_id),
+	foreign key news_clubs_news_id_fkey (news_id) references news(id),
+	foreign key news_clubs_club_id_fkey (club_id) references clubs(id)
+	
 );

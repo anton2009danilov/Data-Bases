@@ -1,5 +1,5 @@
-truncate table archive ;
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('1', '1', '2', '1981-01-18 15:10:43',
+INSERT INTO `archives` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) values
+('1', '1', '2', '1981-01-18 15:10:43',
 '
 1. e4 {[%clk 0:15:09.9]} 1... e5 {[%clk 0:15:08.9]} 2. Nf3 {[%clk 0:15:16.7]}
 2... Nc6 {[%clk 0:15:17]} 3. Bc4 {[%clk 0:15:25]} 3... Nf6 {[%clk 0:15:09]} 4.
@@ -31,8 +31,8 @@ a3 {[%clk 0:07:05.8]} 38. h5 {[%clk 0:12:41.1]} 38... a2 {[%clk 0:07:09.3]} 39.
 h6 {[%clk 0:12:45.2]} 39... a1=Q {[%clk 0:07:17.1]} 40. h7 {[%clk 0:12:38.4]}
 40... Qh1+ {[%clk 0:07:13.9]}
 ', '0-1'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('2', '2', '22', '1994-03-30 04:46:34',
+),
+('2', '2', '22', '1994-03-30 04:46:34',
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -50,8 +50,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 0:08:04.3]} 20. Qxa6+ {[%clk 0:11:29.7]} 20... Kd7 {[%clk 0:08:12]} 21. h3
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
-', '1-0');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('3', '3', '23', '2017-07-08 00:05:41', 
+', '1-0'),
+('3', '3', '23', '2017-07-08 00:05:41', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -70,8 +70,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]} 1-0
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('4', '4', '24', '2019-07-27 06:13:04', 
+),
+('4', '4', '24', '2019-07-27 06:13:04', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -90,8 +90,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]} 1-0
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('5', '5', '25', '1988-09-13 03:24:38', 
+),
+('5', '5', '25', '1988-09-13 03:24:38', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -110,8 +110,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '0-1'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('6', '6', '26', '1996-06-01 14:42:12',
+),
+('6', '6', '26', '1996-06-01 14:42:12',
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -130,8 +130,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '0-1'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('7', '7', '27', '2005-03-06 02:05:28', 
+),
+('7', '7', '27', '2005-03-06 02:05:28', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -150,8 +150,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '0-1'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('8', '8', '28', '1994-07-18 19:41:19',
+),
+('8', '8', '28', '1994-07-18 19:41:19',
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -170,8 +170,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '0-1'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('9', '9', '29', '2014-11-22 01:21:24',
+),
+('9', '9', '29', '2014-11-22 01:21:24',
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -190,8 +190,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '0-1'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('10', '10', '20', '2018-12-04 01:51:26', 
+),
+('10', '10', '20', '2018-12-04 01:51:26', 
 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
@@ -211,8 +211,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1-0'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('11', '11', '21', '1976-07-21 19:13:00', 
+),
+('11', '11', '21', '1976-07-21 19:13:00', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -231,8 +231,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]} 1-0
 ', '1-0'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('12', '12', '22', '2012-02-05 03:38:41', 
+),
+('12', '12', '22', '2012-02-05 03:38:41', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -251,8 +251,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1-0'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('13', '13', '23', '2016-01-19 00:20:48', 
+),
+('13', '13', '23', '2016-01-19 00:20:48', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -271,8 +271,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1-0'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('14', '14', '24', '2001-04-20 02:45:31', 
+),
+('14', '14', '24', '2001-04-20 02:45:31', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -291,8 +291,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1-0'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('15', '15', '25', '1986-03-22 22:40:02', 
+),
+('15', '15', '25', '1986-03-22 22:40:02', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -311,8 +311,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1-0'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('16', '16', '26', '1984-05-29 05:15:15', 
+),
+('16', '16', '26', '1984-05-29 05:15:15', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -331,8 +331,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('17', '17', '27', '1996-10-27 09:09:59', 
+),
+('17', '17', '27', '1996-10-27 09:09:59', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -351,8 +351,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('18', '18', '28', '1995-06-17 17:50:54', 
+),
+('18', '18', '28', '1995-06-17 17:50:54', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -371,8 +371,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('19', '19', '29', '2007-09-24 13:33:28', 
+),
+('19', '19', '29', '2007-09-24 13:33:28', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -391,8 +391,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('20', '20', '10', '2002-10-20 10:17:04', 
+),
+('20', '20', '10', '2002-10-20 10:17:04', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -411,8 +411,8 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('21', '21', '11', '2005-02-09 17:54:11', 
+),
+('21', '21', '11', '2005-02-09 17:54:11', 
 '
 1. e4 {[%clk 0:14:59.8]} 1... e5 {[%clk 0:15:06.2]} 2. Nf3 {[%clk 0:15:06.9]}
 2... Nc6 {[%clk 0:15:11.9]} 3. d4 {[%clk 0:15:14]} 3... exd4 {[%clk 0:15:16.7]}
@@ -431,33 +431,33 @@ Qa7 {[%clk 0:12:20.7]} 14... g5 {[%clk 0:10:31.1]} 15. Bd2 {[%clk 0:11:35.3]}
 {[%clk 0:10:57.3]} 21... gxf2+ {[%clk 0:08:17.9]} 22. Kxf2 {[%clk 0:11:04.8]}
 22... Qe5 {[%clk 0:08:16.8]}
 ', '1/2-1/2'
-);
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('22', '22', '12', '1985-03-29 06:16:39', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('23', '23', '13', '1983-05-20 06:30:42', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('24', '24', '14', '1986-10-31 21:09:33', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('25', '25', '15', '1978-01-19 09:17:54', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('26', '26', '16', '2012-01-01 10:45:18', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('27', '27', '17', '2004-07-22 14:30:14', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('28', '28', '18', '2005-12-12 12:23:11', null,'1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('29', '29', '19', '2019-03-30 07:45:26', null,'1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('30', '30', '10', '2016-01-26 11:38:15', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('31', '21', '11', '2002-09-01 18:36:07', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('32', '22', '12', '1972-09-17 15:09:18', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('33', '23', '13', '2017-10-21 00:59:08', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('34', '24', '14', '2003-11-27 11:32:06', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('35', '25', '1', '1986-08-14 02:04:34', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('36', '3', '6', '1977-01-14 11:54:34', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('37', '3', '7', '1991-03-07 07:37:53', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('38', '3', '8', '1978-08-17 03:52:17', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('39', '3', '9', '1978-04-14 04:33:42', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('40', '4', '10', '2015-09-03 07:40:00', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('41', '4', '1', '2012-08-01 11:49:45', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('42', '2', '4', '2007-07-30 22:32:04', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('43', '3', '4', '2003-06-27 04:36:26', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('44', '11', '12', '1989-05-03 06:28:45', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('45', '11', '12', '1980-10-24 18:04:00', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('46', '11', '12', '1981-06-19 12:16:41', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('47', '11', '13', '1980-07-11 19:45:29', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('48', '11', '13', '1971-07-26 11:48:21', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('49', '11', '13', '1982-07-05 10:28:40', null, '1/2-1/2');
-INSERT INTO `archive` (`id`, `white_id`, `black_id`, `game_date`, `game_text`, `game_result`) VALUES ('50', '11', '13', '1990-08-22 04:47:31', null, '1/2-1/2');
+),
+('22', '22', '12', '1985-03-29 06:16:39', null, '1/2-1/2'),
+('23', '23', '13', '1983-05-20 06:30:42', null, '1/2-1/2'),
+('24', '24', '14', '1986-10-31 21:09:33', null, '1/2-1/2'),
+('25', '25', '15', '1978-01-19 09:17:54', null, '1/2-1/2'),
+('26', '26', '16', '2012-01-01 10:45:18', null, '1/2-1/2'),
+('27', '27', '17', '2004-07-22 14:30:14', null, '1/2-1/2'),
+('28', '28', '18', '2005-12-12 12:23:11', null,'1/2-1/2'),
+('29', '29', '19', '2019-03-30 07:45:26', null,'1/2-1/2'),
+('30', '30', '10', '2016-01-26 11:38:15', null, '1/2-1/2'),
+('31', '21', '11', '2002-09-01 18:36:07', null, '1/2-1/2'),
+('32', '22', '12', '1972-09-17 15:09:18', null, '1/2-1/2'),
+('33', '23', '13', '2017-10-21 00:59:08', null, '1/2-1/2'),
+('34', '24', '14', '2003-11-27 11:32:06', null, '1/2-1/2'),
+('35', '25', '1', '1986-08-14 02:04:34', null, '1/2-1/2'),
+('36', '3', '6', '1977-01-14 11:54:34', null, '1/2-1/2'),
+('37', '3', '7', '1991-03-07 07:37:53', null, '1/2-1/2'),
+('38', '3', '8', '1978-08-17 03:52:17', null, '1/2-1/2'),
+('39', '3', '9', '1978-04-14 04:33:42', null, '1/2-1/2'),
+('40', '4', '10', '2015-09-03 07:40:00', null, '1/2-1/2'),
+('41', '4', '1', '2012-08-01 11:49:45', null, '1/2-1/2'),
+('42', '2', '4', '2007-07-30 22:32:04', null, '1/2-1/2'),
+('43', '3', '4', '2003-06-27 04:36:26', null, '1/2-1/2'),
+('44', '11', '12', '1989-05-03 06:28:45', null, '1/2-1/2'),
+('45', '11', '12', '1980-10-24 18:04:00', null, '1/2-1/2'),
+('46', '11', '12', '1981-06-19 12:16:41', null, '1/2-1/2'),
+('47', '11', '13', '1980-07-11 19:45:29', null, '1/2-1/2'),
+('48', '11', '13', '1971-07-26 11:48:21', null, '1/2-1/2'),
+('49', '11', '13', '1982-07-05 10:28:40', null, '1/2-1/2'),
+('50', '11', '13', '1990-08-22 04:47:31', null, '1/2-1/2');
