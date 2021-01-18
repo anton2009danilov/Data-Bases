@@ -26,14 +26,14 @@ create table profiles (
 	country varchar(150),
 	`language` varchar(150),
 	content_language varchar(150),
-	landing_page enum('Home', 'Chess Today', 'Live'),
+	landing_page enum('Home', 'Chess Today', 'Live') default('Home'),
 	timezone varchar(100),
-	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National'),
+	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National', ''),
 	otb_rating_value smallint unsigned,
 	-- image bigint unsigned,
 	
 	primary key (id),
-	foreign key (user_id) references users(id),
+	foreign key profiles_user_id_fkey (user_id) references users(id),
 	index (firstname, lastname)
 	
 	
@@ -41,26 +41,20 @@ create table profiles (
 
 
 -- архив сыгранных на сайте партий
-drop table if exists archive;
-create table archive (
+drop table if exists archives;
+create table archives (
 	id serial,
 	white_id bigint unsigned not null,
 	black_id bigint unsigned not null,
 	game_date datetime default now(),
-	game_text json,
--- 	расшифровка партии в формате json:
--- 	{
--- 	1: e4 e5,
--- 	2: Kf3 Kc6,
--- 	3: Kc3 Kf6
--- 	...
--- 	}
+	game_text text,
+	game_result enum('1-0', '0-1', '1/2-1/2', 'aborted'),
 	
 	primary key (id),
 	index (white_id),
 	index (black_id),
-	foreign key (white_id) references users(id),
-	foreign key (black_id) references users(id)
+	foreign key archives_white_id_fkey (white_id) references users(id),
+	foreign key archives_black_id_fkey (black_id) references users(id)
 	
 	
 );
@@ -69,12 +63,22 @@ create table archive (
 drop table if exists puzzles;
 create table puzzles (
 	id serial,
-	puzzle json not null,	-- расположение фигур на доске, очередность хода
-	answer json not null, 	-- решение задачи
+	puzzle varchar(300) not null,	-- расположение фигур на доске, очередность хода
+	answer varchar(300) not null, 	-- решение задачи
 	difficulty smallint unsigned not null, -- рейтинг задачи по сложности
 	
 	primary key (id),
 	index (difficulty)
+	
+);
+
+-- таблица для отметки решенных пользователем задач
+drop table if exists solved_puzzles;
+create table solved_puzzles (
+	user_id bigint unsigned not null,
+	puzzle_id bigint unsigned not null,
+	
+	primary key (user_id, puzzle_id)
 	
 );
 
@@ -92,19 +96,19 @@ create table tournaments (
 	primary key (id),
 	index (name),
 	index (start_date),
-	foreign key (creator_id) references users(id)
+	foreign key tournaments_creator_id_fkey (creator_id) references users(id)
 	
 );
 
 -- таблица записи на соревнования
-drop table if exists user_tournament;
-create table user_tournament (
+drop table if exists user_tournaments;
+create table user_tournaments (
 	user_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
 		
 	primary key (user_id, tournament_id),
-	foreign key (user_id) references users(id),
-	foreign key (tournament_id) references tournaments(id)
+	foreign key user_tournaments_user_id_fkey (user_id) references users(id),
+	foreign key user_tournaments_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица клубов
@@ -116,19 +120,19 @@ create table clubs (
 	
 	primary key (id),
 	index (name),
-	foreign key (creator_id) references users(id)
+	foreign key clubs_creator_id_fkey (creator_id) references users(id)
 	
 );
 
 -- таблица записи в клубы
-drop table if exists user_club;
-create table user_club (
+drop table if exists user_clubs;
+create table user_clubs (
 	user_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
 	primary key (user_id, club_id),
-	foreign key (user_id) references users(id),
-	foreign key (club_id) references clubs(id)
+	foreign key user_clubs_user_id_fkey (user_id) references users(id),
+	foreign key user_clubs_club_id_fkey (club_id) references clubs(id)
 );
 
 -- таблица соревнований, организованных клубом
@@ -136,12 +140,10 @@ drop table if exists club_tournament;
 create table club_tournament(
 	club_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
-	name varchar(200) not null,
 	
 	primary key (club_id, tournament_id),
-	index (name),
-	foreign key (club_id) references clubs(id),
-	foreign key (tournament_id) references tournaments(id)
+	foreign key club_tournament_club_tournament_fkey (club_id) references clubs(id),
+	foreign key club_tournament_tournament_id_fkey (tournament_id) references tournaments(id)
 );
 
 -- таблица новостей
@@ -156,14 +158,17 @@ create table news (
 	
 	primary key (id),
 	index (header),
-	foreign key (creator_id) references users(id)
+	foreign key news_creator_id_fkey (creator_id) references users(id)
 );
 
 -- таблица привязки новости к клубу
-drop table if exists news_club;
-create table news_club(
+drop table if exists news_clubs;
+create table news_clubs(
 	news_id bigint unsigned not null,
 	club_id bigint unsigned not null,
 	
-	primary key (news_id, club_id)
+	primary key (news_id, club_id),
+	foreign key news_clubs_news_id_fkey (news_id) references news(id),
+	foreign key news_clubs_club_id_fkey (club_id) references clubs(id)
+	
 );
