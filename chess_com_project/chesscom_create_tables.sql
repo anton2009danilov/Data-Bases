@@ -26,9 +26,9 @@ create table profiles (
 	country varchar(150),
 	`language` varchar(150),
 	content_language varchar(150),
-	landing_page enum('Home', 'Chess Today', 'Live'),
+	landing_page enum('Home', 'Chess Today', 'Live') default('Home'),
 	timezone varchar(100),
-	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National'),
+	otb_rating_type enum('FIDE', 'USCF', 'ECF', 'National', ''),
 	otb_rating_value smallint unsigned,
 	-- image bigint unsigned,
 	
@@ -47,14 +47,8 @@ create table archive (
 	white_id bigint unsigned not null,
 	black_id bigint unsigned not null,
 	game_date datetime default now(),
-	game_text json,
--- 	расшифровка партии в формате json:
--- 	{
--- 	1: e4 e5,
--- 	2: Kf3 Kc6,
--- 	3: Kc3 Kf6
--- 	...
--- 	}
+	game_text text,
+	game_result enum('1-0', '0-1', '1/2-1/2', 'aborted'),
 	
 	primary key (id),
 	index (white_id),
@@ -69,13 +63,25 @@ create table archive (
 drop table if exists puzzles;
 create table puzzles (
 	id serial,
-	puzzle json not null,	-- расположение фигур на доске, очередность хода
-	answer json not null, 	-- решение задачи
+	puzzle varchar(300) not null,	-- расположение фигур на доске, очередность хода
+	answer varchar(300) not null, 	-- решение задачи
 	difficulty smallint unsigned not null, -- рейтинг задачи по сложности
 	
 	primary key (id),
 	index (difficulty)
 	
+);
+
+-- таблица для отметки решенных пользователем задач
+drop table if exists solved_puzzles;
+create table solved_puzzles (
+	user_id bigint unsigned not null,
+	puzzle_id bigint unsigned not null,
+	
+	primary key (user_id, puzzle_id),
+	foreign key (user_id) references users(id),
+	foreign key (puzzle_id) references puzzles(id)
+
 );
 
 
@@ -136,10 +142,8 @@ drop table if exists club_tournament;
 create table club_tournament(
 	club_id bigint unsigned not null,
 	tournament_id bigint unsigned not null,
-	name varchar(200) not null,
 	
 	primary key (club_id, tournament_id),
-	index (name),
 	foreign key (club_id) references clubs(id),
 	foreign key (tournament_id) references tournaments(id)
 );
